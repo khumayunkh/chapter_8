@@ -20,5 +20,11 @@ let x = {
     age: 19
 }
 
-x.fun = sum() // f is not function
-console.log(x.fun) // 9
+x.fun = sum // f is function
+console.log(x.fun(5,5)) // 10
+console.log(x['name'].toUpperCase()) // HUMOYUN
+
+const upper = x => x.toUpperCase()
+
+x.upper = upper
+console.log(x.upper(x.name)) //HUMOYUN
