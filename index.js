@@ -69,19 +69,78 @@
 
 // console.log(filter.call(counter))
 
-function x(){
-    return this.x / this.y 
-} 
-let obj = {
-    x:32,
-    y:2
-}
+// function x(){
+//     return this.x / this.y
+// }
 
-let g = x.bind(obj)
-console.log(g())  // 16
-const y = (x,y) =>{
-    return x + y
-}
+// let obj = {
+//     x:32,
+//     y:2
+// }
 
-let t = y.bind(1,3)
-console.log(t(2)) //5 x = 3, y = 2
+// let g = x.bind(obj)
+// console.log(g())
+
+
+// const y = (x,y) =>{
+//     return x + y
+// }
+
+// let t = y.bind(1,3)
+// console.log(t(2)) //5 x = 3, y = 2
+
+
+// function x(t){
+//     return this.y+this.x+t
+// }
+
+// function y({x,y},t){
+//     return {x: x+y+t}
+// }
+
+// console.log(y({x:2, y:3},2)) // {x:7}
+
+
+// function array(x,y,i){
+//     return x[1] + y[0] + i
+// }
+
+// console.log(array([3,2],[4,4],5)) // 11
+
+// let obg = {
+//     x:3,
+//     y:4
+// }
+
+// let g = x.bind(obg)
+// console.log(g(3)) // 10
+
+// const x =(x,y)=>{
+//     return x + y 
+// }
+
+// let n = x.bind(null,32)
+// console.log(n(3)) // 35
+
+// let obj = Object.create({},{
+//     name:{
+//         value:'humoyun'
+//     },
+//     age:{
+//         value:19
+//     }
+// })
+
+// console.log(obj.name.toUpperCase()) // HUMOYUN
+
+let array = [1,2,3,4,6,8,9]
+let a = [...new Set(array.filter(item=> item>3))]
+console.log(a) // [4,6,8,9]
+
+console.log(a.slice(0,2)) //[4,6]
+a.splice(2,4,3)
+console.log(a) // [4, 6, 3]
+console.log(a.fill(1,1,3)) // [4,1,1]
+
+
+
